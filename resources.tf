@@ -44,11 +44,11 @@ resource "docker_container" "bgg-backend" {
         name = docker_network.bgg-net.id
     }
 
-    env = {
+    env = [
         "BGG_DB_USER=root",
         "BGG_DB_PASSWORD=changeit",
         "BGG_DB_HOST=${docker_container.bgg-database.name}",
-    }
+    ]
     
     ports {
         internal = 3000
