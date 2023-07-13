@@ -17,7 +17,7 @@ resource "docker_volume" "data-vol" {
 
 ## Spin off a container
 resource "docker_container" "bgg-database" {
-    name = "${var.app_namspace}-bgg-database"
+    name = "${var.app_namespace}-bgg-database"
     image = docker_image.bgg-database.image_id
 
     networks_advanced {
